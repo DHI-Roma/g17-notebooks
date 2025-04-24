@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it using the metadata from this file.
+title:  >-
+  GRACEFUL17 Workbench
+type: software
+license: MIT
+url: https://github.com/DHI-Roma/g17-workbench
+authors: 
+  - family-names: Sander
+    given-names: Christoph
+date-released: 2025-04-16
