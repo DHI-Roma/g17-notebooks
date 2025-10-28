@@ -1,4 +1,9 @@
 format: jb-book
 root: README
-chapters:
-  - file: G17_workbench
+parts:
+  - caption: "General Dashboards"
+    chapters:
+      - file: books/G17_dashboard
+  - caption: "Custom Workbenches"
+    chapters:
+      - file: books/G17_workbench

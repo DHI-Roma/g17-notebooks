@@ -2,11 +2,19 @@ cff-version: 1.2.0
 message: >-
   If you use this software, please cite it using the metadata from this file.
 title:  >-
-  GRACEFUL17 Workbench
+  GRACEFUL17 Notebooks
 type: software
 license: MIT
-url: https://github.com/DHI-Roma/g17-workbench
+url: https://github.com/DHI-Roma/g17-notebooks
 authors: 
   - family-names: Sander
     given-names: Christoph
-date-released: 2025-04-16
+  - family-names: Beutler
+    given-names: Naomi
+  - family-names: Sarra
+    given-names: Filippo
+  - family-names: Verdone
+    given-names: Valentino
+  - family-names: Boute
+    given-names: Bruno
+date-released: 2025-11-01
