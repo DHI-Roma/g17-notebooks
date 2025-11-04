@@ -5,7 +5,7 @@ project:
   id: graceful17-notebooks
   title: GRACEFUL17 Notebooks
   subtitle: Explore our data and reproduce our code
-  banner: ./logo.jpg
+  banner: ./logo.png
   github: DHI-Roma/g17-notebooks
   date: 2025-11-01
   # doi: 10.5281/zenodo.6476040
@@ -101,6 +101,6 @@ project:
 
 site:
   template: book-theme
-  # options:
-  #   logo: site_logo.png
-  #   favicon: favicon.ico
+  options:
+    logo: logo.png
+    favicon: logo.png
