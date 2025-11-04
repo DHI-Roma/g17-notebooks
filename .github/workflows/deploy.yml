@@ -1,28 +1,42 @@
 name: deploy-book
-
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
+permissions:
+  contents: write
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Install dependencies
         run: |
           pip install -U jupyter-book ghp-import
-      - name: Build the book
+          
+      - name: Build the book (module entrypoint)
         run: |
-          jupyter-book build .
+          python -c "import sys, jupyter_book; print('jupyter-book version:', getattr(jupyter_book, '__version__', 'unknown'))"
+          python -m jupyter_book.cli build . -W --keep-going
+
+      - name: Inspect build output
+        run: |
+          ls -al
+          ls -al _build || true
+          ls -al _build/html || true
+          printf '\n--- _toc.yml ---\n'; cat _toc.yml
+          printf '\n--- tree books ---\n'; find books -maxdepth 1 -type f -printf "%f\n"
+
+      - name: Fail if HTML missing
+        run: |
+          test -d _build/html || { echo "❌ Kein _build/html erzeugt."; exit 1; }
+
       - name: Deploy to GitHub Pages
         run: |
           ghp-import -n -p -f _build/html
