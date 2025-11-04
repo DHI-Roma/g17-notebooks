@@ -25,6 +25,11 @@ jobs:
         run: |
           jupyter-book build .
 
+      - name: Inspect build output
+        run: |
+          ls -al book/_build || true
+          ls -al book/_build/html || true
+
       - name: Deploy to GitHub Pages
         run: |
-          ghp-import -n -p -f _build/html
+          ghp-import -n -p -f book/_build/html
