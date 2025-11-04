@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -34,9 +37,15 @@ jobs:
           cat _config.yml
           echo "--- books ---"
           ls -la books
-      - name: Build the book
+      - name: Build the book (force Python module)
         run: |
-          jupyter-book build .
+          python -m jupyter_book build . -W --keep-going -v
+
+      - name: Inspect build output
+        run: |
+          ls -al _build || true
+          ls -al _build/html || true
+          
       - name: Deploy to GitHub Pages
         run: |
           ghp-import -n -p -f _build/html
