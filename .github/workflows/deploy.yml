@@ -5,31 +5,25 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-
-      - name: Install dependencies
-        run: |
-          pip install -U jupyter-book ghp-import
-
-      - name: Build the book
-        run: |
-          jupyter-book build .
-
-      - name: Inspect build output
+      - name: Install
+        run: pip install -U jupyter-book ghp-import
+      - name: Build
+        working-directory: book
+        run: jupyter-book build .
+      - name: Inspect
         run: |
           ls -al book/_build || true
           ls -al book/_build/html || true
-
-      - name: Deploy to GitHub Pages
-        run: |
-          ghp-import -n -p -f book/_build/html
+      - name: Deploy
+        run: ghp-import -n -p -f book/_build/html
