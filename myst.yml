@@ -4,8 +4,11 @@ version: 1
 project:
   id: graceful17-notebooks
   title: GRACEFUL17 Notebooks
+  subtitle: Explore our data and reproduce our code
+  banner: ./logo.jpg
   github: DHI-Roma/g17-notebooks
   date: 2025-11-01
+  # doi: 10.5281/zenodo.6476040
   license: CC-BY-4.0
   open_access: true
 
