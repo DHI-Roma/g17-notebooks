@@ -35,8 +35,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
+          
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - name: Install Jupyter Book (via myst)
         run: npm install -g jupyter-book
+      - name: Install ghp
+        run: pip install jupyter-book ghp-import
       - name: Build HTML Assets
         run: jupyter-book build --html
       # - name: Upload artifact
