@@ -11,8 +11,11 @@ project:
   # doi: 10.5281/zenodo.6476040
   license: CC-BY-4.0
   open_access: true
+  # exports:
+  #   - format: pdf
+  #     template: lapreprint-typst
+  #     articles: article.md
 
-  # Zentrale Affiliations, per ID wiederverwendbar
   affiliations:
     - id: ghi-rome
       institution: German Historical Institute Rome
@@ -101,6 +104,8 @@ project:
 
 site:
   template: book-theme
-  options:
+  title: GRACEFUL17 Notebooks
+  options:    
     logo: logo.png
     favicon: logo.png
+    logo_text: GRACEFUL17 Notebooks
