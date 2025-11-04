@@ -1,0 +1,103 @@
+# myst.yml
+version: 1
+
+project:
+  id: graceful17-notebooks
+  title: GRACEFUL17 Notebooks
+  github: DHI-Roma/g17-notebooks
+  date: 2025-11-01
+  license: CC-BY-4.0
+  open_access: true
+
+  # Zentrale Affiliations, per ID wiederverwendbar
+  affiliations:
+    - id: ghi-rome
+      institution: German Historical Institute Rome
+      city: Rome
+      country: Italy
+    - id: enc
+      institution: École nationale des chartes
+      city: Paris
+      country: France
+    - id: uab
+      institution: Universitat Autònoma de Barcelona
+      city: Barcelona
+      country: Spain
+    - id: goethe
+      institution: Goethe University Frankfurt
+      city: Frankfurt am Main
+      country: Germany
+
+  authors:
+    - name: Christoph Sander
+      orcid: https://orcid.org/0000-0003-4452-0107
+      affiliations: [ghi-rome]
+      roles: [Software, Writing – review & editing, Visualization]
+    - name: Naomi Beutler
+      orcid: https://orcid.org/0009-0005-1361-5092
+      affiliations: [enc, uab]
+      roles: [Investigation, Writing – review & editing, Visualization]
+    - name: Filippo Sarra
+      orcid: https://orcid.org/0009-0009-4366-4011
+      affiliations: [enc]
+      roles: [Investigation, Writing – review & editing]
+    - name: Valentino Verdone
+      orcid: https://orcid.org/0009-0000-7424-5770
+      affiliations: [goethe]
+      roles: [Investigation, Writing – review & editing]
+    - name: Bruno Boute
+      orcid: https://orcid.org/0000-0003-0911-3995
+      affiliations: [goethe]
+      roles: [Conceptualization, Supervision, Funding acquisition, Project administration]
+
+  funding:
+    - statement: >
+        Supported by Deutsche Forschungsgemeinschaft (DFG, grant 510246510) and
+        Agence nationale de la recherche (ANR, grant ANR-22-FRAL-0010).
+      awards:
+        - id: DFG-510246510
+          name: DFG grant 510246510
+          sources:
+            - name: Deutsche Forschungsgemeinschaft (DFG)
+        - id: ANR-22-FRAL-0010
+          name: ANR grant ANR-22-FRAL-0010
+          sources:
+            - name: Agence nationale de la recherche (ANR)
+
+  description: |
+    The GRACEFUL17 project (Global Governance, Local Dynamics. *Transnational Regimes of Grace
+    in the Roman Dataria Apostolica (17th Century)*) investigates papal provisions of ecclesiastical
+    offices from a global perspective. Combining classical palaeographic methods with Digital
+    Humanities techniques, the project builds an ontology and dataset based on material from the
+    *Archivio Apostolico Vaticano*.
+    Ontology resources:
+    - https://doi.org/10.5281/zenodo.17420005
+    - https://dhi-roma.github.io/grace-ontology/docs/widoco/doc/index.html
+
+    The GRACEFUL17 notebooks and dashboards presented here
+    provide SPARQL-based overviews of the project data and
+    illustrate how other scholars may engage with our dataset.
+
+  keywords:
+    - jupyter-book
+    - dashboards
+    - graceful17
+    - digital humanities
+
+  toc:
+    - file: README.md
+      title: Home
+    - title: General Dashboards
+      children:
+        - file: books/G17_dashboard.ipynb
+          title: GRACEFUL17 Overview
+    - title: Custom Workbenches
+      children:
+        - file: books/G17_workbench.ipynb
+          title: GRACEFUL17 Workbench
+
+site:
+  template: book-theme
+  # options:
+  #   logo: site_logo.png
+  #   favicon: favicon.ico
