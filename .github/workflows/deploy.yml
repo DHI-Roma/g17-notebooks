@@ -2,43 +2,28 @@ name: deploy-book
 
 on:
   push:
-    branches: [ main ]
-
-permissions:
-  contents: write
+    branches:
+      - main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install deps
+      - name: Install dependencies
         run: |
-          pip install -U jupyter-book ghp-import
-          jb --version
-          python -c "import jupyter_book as jb; print('jupyter_book package:', jb.__version__)"
+          pip install -U jupyter-book<=1.0.0 ghp-import
 
-      - name: Inspect repo (quick)
+      - name: Build the book
         run: |
-          ls -la
-          ls -la books
-          cat _toc.yml
-          cat _config.yml
-
-      - name: Build Jupyter Book
-        run: |
-          jb build . -W --keep-going --verbose
-
-      - name: Inspect build output
-        run: |
-          ls -la _build || true
-          ls -la _build/html || true
-
+          jupyter-book build .
       - name: Deploy to GitHub Pages
         run: |
           ghp-import -n -p -f _build/html
