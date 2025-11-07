@@ -8,7 +8,7 @@ project:
   banner: ./logo.png
   github: DHI-Roma/g17-notebooks
   date: 2025-11-01
-  doi: 10.5281/zenodo.17549546
+  doi: 10.5281/zenodo.17549545
   license: CC-BY-4.0
   open_access: true
   # exports:
