@@ -6,3 +6,6 @@ See our ontology at https://w3id.org/grace/ontology and https://w3id.org/grace/o
 Build queries at https://dhi-roma.github.io/g17-explorer/ask/
 
 Use the DATAria Python Package `import dataria` ([codebase](https://github.com/ch-sander/dataria-py-utils))
+
+See release in [![DOI](https://zenodo.org/badge/967452516.svg)](https://doi.org/10.5281/zenodo.17549545)
+
