@@ -1,5 +1,5 @@
 # myst.yml
-version: 1
+version: 1.1
 
 project:
   id: graceful17-notebooks
@@ -7,7 +7,7 @@ project:
   subtitle: Explore our data and reproduce our code
   banner: ./logo.png
   github: DHI-Roma/g17-notebooks
-  date: 2025-11-01
+  date: 2026-02-09
   doi: 10.5281/zenodo.17549545
   license: CC-BY-4.0
   open_access: true
